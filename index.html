@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Umar Aslam | Web Developer & SEO Specialist</title>
+  <meta name="description" content="Umar Aslam is a Web Developer, SEO Specialist and Graphic Designer helping businesses build better websites and grow online.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0f19;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(11, 15, 25, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #6c63ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #c8cbd5;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 75px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid rgba(108, 99, 255, 0.5);
+      border-radius: 30px;
+      color: #aaa5ff;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #6c63ff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #aeb3c0;
+      font-size: 19px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #6c63ff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid #3b4050;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #6c63ff;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: #6c63ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #9da3b0;
+      max-width: 600px;
+      margin-top: 10px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #adb2bf;
+      margin-bottom: 18px;
+    }
+
+    .about-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .info-box {
+      background: #121725;
+      padding: 25px;
+      border: 1px solid #202638;
+      border-radius: 12px;
+    }
+
+    .info-box h3 {
+      font-size: 28px;
+      color: #6c63ff;
+    }
+
+    .info-box p {
+      color: #9da3b0;
+      margin: 0;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #121725;
+      padding: 35px 28px;
+      border: 1px solid #202638;
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #6c63ff;
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #9da3b0;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: #121725;
+      border: 1px solid #252b3d;
+      padding: 12px 18px;
+      border-radius: 8px;
+      color: #cbd0db;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #121725;
+      border: 1px solid #202638;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      border-color: #6c63ff;
+    }
+
+    .project-image {
+      height: 190px;
+      background: linear-gradient(135deg, #191f31, #272044);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #aaa5ff;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      color: #9da3b0;
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      color: #8e88ff;
+      font-weight: bold;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      background: #121725;
+      border: 1px solid #202638;
+      border-radius: 16px;
+      padding: 55px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #9da3b0;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid #202638;
+      text-align: center;
+      color: #777e8d;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #0b0f19;
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .about-grid,
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+      }
+
+      .contact-box {
+        padding: 35px 20px;
+      }
+
+      .contact-box h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+    <div class="container">
+      <nav>
+
+        <a href="#home" class="logo">
+          Umar<span>.</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="tag">
+          Available for Freelance Projects
+        </div>
+
+        <h1>
+          I Build Websites<br>
+          That <span>Work.</span>
+        </h1>
+
+        <p>
+          I'm Umar Aslam, a Web Developer and SEO Specialist helping
+          businesses build professional websites, improve their online
+          presence and grow through search.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#projects" class="btn btn-primary">
+            View My Work
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Let's Work Together
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>About Me</small>
+        <h2>Who I Am</h2>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            I'm Umar Aslam, a Web Developer, SEO Specialist and
+            Graphic Designer focused on creating useful and
+            professional digital experiences.
+          </p>
+
+          <p>
+            I work with businesses to create websites from scratch,
+            improve their search visibility and build a stronger
+            online presence.
+          </p>
+
+          <p>
+            My approach is simple: understand the goal, build
+            something useful and make sure it actually works.
+          </p>
+
+        </div>
+
+        <div class="about-info">
+
+          <div class="info-box">
+            <h3>3+</h3>
+            <p>Web Projects</p>
+          </div>
+
+          <div class="info-box">
+            <h3>3</h3>
+            <p>Core Skills</p>
+          </div>
+
+          <div class="info-box">
+            <h3>SEO</h3>
+            <p>Search Optimization</p>
+          </div>
+
+          <div class="info-box">
+            <h3>WP</h3>
+            <p>WordPress Development</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>What I Do</small>
+        <h2>My Services</h2>
+        <p>
+          Digital solutions designed to help businesses establish
+          and grow their online presence.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+
+          <div class="service-icon">💻</div>
+
+          <h3>Web Development</h3>
+
+          <p>
+            Professional, responsive and user-friendly websites
+            built with WordPress and modern web technologies.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🔍</div>
+
+          <h3>SEO</h3>
+
+          <p>
+            On-page, technical and off-page SEO strategies designed
+            to improve search visibility and organic traffic.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🎨</div>
+
+          <h3>Graphic Design</h3>
+
+          <p>
+            Clean and professional visual designs for websites,
+            brands, social media and digital marketing.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>My Toolkit</small>
+        <h2>Skills & Tools</h2>
+      </div>
+
+      <div class="skills">
+
+        <div class="skill">WordPress</div>
+        <div class="skill">Elementor</div>
+        <div class="skill">WooCommerce</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">SEO</div>
+        <div class="skill">Local SEO</div>
+        <div class="skill">Technical SEO</div>
+        <div class="skill">Google Search Console</div>
+        <div class="skill">Google Analytics</div>
+        <div class="skill">SEMrush</div>
+        <div class="skill">Screaming Frog</div>
+        <div class="skill">Graphic Design</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small>My Work</small>
+
+        <h2>Featured Projects</h2>
+
+        <p>
+          A selection of websites and digital projects I've worked on.
+        </p>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Layyah City Hospital
+          </div>
+
+          <div class="project-content">
+
+            <h3>Layyah City Hospital</h3>
+
+            <p>
+              Professional healthcare website designed to provide
+              information about hospital services and facilities.
+            </p>
+
+            <a
+              href="https://layyahcityhospital.com/"
+              target="_blank"
+              class="project-link">
+              Visit Website →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Aberdeen Prime Paints
+          </div>
+
+          <div class="project-content">
+
+            <h3>Aberdeen Prime Paints</h3>
+
+            <p>
+              Business website created for a painting and cleaning
+              service company targeting customers in Scotland.
+            </p>
+
+            <a
+              href="https://aberdeenprimepaints.co.uk/"
+              target="_blank"
+              class="project-link">
+              Visit Website →
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+          <div class="project-image">
+            Courtesy Photo
+          </div>
+
+          <div class="project-content">
+
+            <h3>Courtesy Photo</h3>
+
+            <p>
+              Photography business website focused on presenting
+              services and creating a professional online presence.
+            </p>
+
+            <a
+              href="https://courtesyphoto.ca/"
+              target="_blank"
+              class="project-link">
+              Visit Website →
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Let's Work Together</h2>
+
+        <p>
+          Have a website, SEO or design project in mind?
+          Let's discuss how I can help you build something better.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+
+          <a
+            href="mailto:your@email.com"
+            class="btn btn-primary">
+            Email Me
+          </a>
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            class="btn btn-outline">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 Umar Aslam. All Rights Reserved.
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function toggleMenu() {
+
+      document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+    }
+
+  </script>
+
+</body>
+</html>
